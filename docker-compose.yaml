@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    command: gunicorn main:app --bind 0.0.0.0:8000
+    environment:
+      - REDIS_HOST=redis
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"

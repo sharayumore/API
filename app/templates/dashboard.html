@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Rate Limit Dashboard</title>
+</head>
+<body>
+    <h1>API Usage Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Key</th>
+            <th>Hits</th>
+        </tr>
+        {% for key, value in stats.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
